@@ -1,33 +1,24 @@
-# Benger Garage v2 — GTA SA / MTA
+# Oryginalne wnętrze + drzwi + Twój garaż
 
-**[Pobierz poprawioną paczkę v2 do MTA](https://github.com/igore0505-dot/benger/raw/refs/heads/main/benger_garage_v2_MTA.zip)**
+**[Pobierz aktualną paczkę do MTA](https://github.com/igore0505-dot/benger/raw/refs/heads/main/oryginal_drzwi_twoj_garaz_MTA.zip)**
 
-[Otwórz plik ZIP na GitHubie](benger_garage_v2_MTA.zip) i użyj „Download raw file”, jeśli pobieranie nie zacznie się automatycznie.
+[Plik ZIP na GitHubie — Download raw file](oryginal_drzwi_twoj_garaz_MTA.zip)
 
-![Garaż v2 — render modelu w Blenderze](garaz_v2.png)
+![Oryginalne wnętrze z drzwiami do dostarczonego garażu](oryginal_drzwi_garaz.png)
 
-## Co zawiera v2
+Przywrócono początkowe modele `Obje` i `crypto_garaz_extra`. Dodano tylko przejście w prawej ścianie i przesuwne drzwi skopiowane z oryginalnego wejścia.
 
-- Drzwi przesuwne skopiowane z oryginalnego modelu: geometria, UV, szkło, ramy i uchwyty. Dwa ruchome skrzydła z własną kolizją i automatycznym otwieraniem.
-- Wejście do garażu na środku prawej ściany, otoczone drewnianymi lamelami. Lamele odtworzono ze zdjęcia; nie było ich w źródłowych modelach.
-- Nowa dobudówka około 15 × 12,8 m: dwa stanowiska, podnośnik nożycowy, posadzka żywiczna, bramy wjazdowe podniesione na stałe.
-- Oświetlenie sześciokątne, zabudowa warsztatowa, szafki i narzędzia, regał z kołami, kompresor, ładowarki oraz stanowisko diagnostyczne.
-- 16 nowych tekstur z mipmapami i wszystkie 53 oryginalne tekstury.
+Za nimi znajduje się garaż z przesłanych **1.dff, 1.col i 1.txd**. Ustawiono go w pionie i wyrównano poziom podłogi bez zmiany skali. Wycięto wyłącznie otwór łączący oba wnętrza. Nie dodano mojego wystroju ani wyposażenia. Tekstury garażu są identyczne z załącznikiem.
 
-[Podgląd drzwi i przejścia](drzwi_v2.png) · [Widok całej dobudówki](calosc_v2.png) · [Edytowalny plik Blendera](https://github.com/igore0505-dot/benger/raw/refs/heads/main/BengerGarage_v2.blend)
+[Wnętrze Twojego garażu](zalaczony_garaz.png) · [Połączenie obu modeli](oryginal_polaczenie.png) · [Plik Blendera](https://github.com/igore0505-dot/benger/raw/refs/heads/main/Oryginal_plus_Twoj_garaz.blend)
 
 ## Uruchomienie w MTA 1.6
 
-1. Rozpakuj folder `benger_garage_v2` do katalogu `resources` serwera.
-2. Zatrzymaj starą wersję: `stop benger_garage`.
-3. Wykonaj `refresh`, a następnie `start benger_garage_v2`.
-4. W grze, na pustym i płaskim terenie, wpisz `/benger`.
-5. Podejdź do szklanych drzwi po prawej stronie wnętrza — otwierają się automatycznie. `/bengerdrzwi` przełącza tryby, `/bengerusun` usuwa podgląd.
+1. Rozpakuj `benger_original_garaz` do katalogu `resources`.
+2. Zatrzymaj wcześniejsze wersje: `stop benger_garage_v2` oraz `stop benger_garage`.
+3. Wykonaj `refresh`, potem `start benger_original_garaz`.
+4. Na płaskim, pustym terenie wpisz `/benger`.
 
-Podgląd jest lokalny dla gracza. Stałe umieszczenie na wspólnej mapie wymaga ustawienia współrzędnych oraz synchronizacji po stronie serwera; instrukcja jest w paczce.
+Drzwi rozsuwają się przy podejściu; `/bengerdrzwi` przełącza tryby, `/bengerusun` usuwa lokalny podgląd. Stała mapa współdzielona wymaga ustawienia współrzędnych i synchronizacji serwerowej.
 
-## Sprawdzenie
-
-Wszystkie pięć DFF, tekstury i trzy COL przechodzą kontrolę odczytu i geometrii. Potwierdzono zgodność drzwi z oryginałem, wolne przejście po otwarciu i blokowanie przez zamknięte skrzydła. Logika Lua przeszła testy z atrapami API MTA, w tym zmianę kierunku animacji i obrót budynku.
-
-Modele nie były uruchamiane w kliencie GTA/MTA. Podglądy są renderami Blendera; oświetlenie i odbicia w grze będą się różnić. Shader LED utrzymuje jasne listwy, ale nie oświetla sąsiednich powierzchni.
+Sprawdzono geometrię, UV, tekstury, połączenie podłóg, kolizję przejścia i logikę Lua poza grą. Test w kliencie MTA pozostaje do wykonania. Obrazy są renderami Blendera.
